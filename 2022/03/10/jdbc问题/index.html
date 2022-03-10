@@ -1,233 +1,446 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="xiaohuo">
+  <meta name="keywords" content="">
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="解决java.sql.SQLException: The server time zone value ‘XXXXXX’ is unrecognized or represents more than one time zone.这是由于数据库和系统时区差异所造成的，在jdbc连接的url后面加上serverTimezone&#x3D;GMT即可解决问题  “jdbc:mysql:&#x2F;&amp;#">
+    <meta name="description" content="解决java.sql.SQLException: The server time zone value ‘XXXXXX’ is unrecognized or represents more than one time zone.这是由于数据库和系统时区差异所造成的，在jdbc连接的url后面加上serverTimezone&#x3D;GMT即可解决问题  “jdbc:mysql:&#x2F;&amp;#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/2022/03/10/jdbc%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="解决java.sql.SQLException: The server time zone value ‘XXXXXX’ is unrecognized or represents more than one time zone.这是由于数据库和系统时区差异所造成的，在jdbc连接的url后面加上serverTimezone&#x3D;GMT即可解决问题  “jdbc:mysql:&#x2F;&amp;#">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-10T08:46:56.463Z">
 <meta property="article:modified_time" content="2020-05-10T09:55:06.087Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<meta property="article:author" content="xiaohuo">
+<meta name="twitter:card" content="summary_large_image">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <title>Hexo</title>
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
   
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
 
   
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 6.0.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-jdbc问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/10/jdbc%E9%97%AE%E9%A2%98/" class="article-date">
-  <time class="dt-published" datetime="2022-03-10T08:46:56.463Z" itemprop="datePublished">2022-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h4 id="解决java-sql-SQLException-The-server-time-zone-value-‘XXXXXX’-is-unrecognized-or-represents-more-than-one-time-zone"><a href="#解决java-sql-SQLException-The-server-time-zone-value-‘XXXXXX’-is-unrecognized-or-represents-more-than-one-time-zone" class="headerlink" title="解决java.sql.SQLException: The server time zone value ‘XXXXXX’ is unrecognized or represents more than one time zone."></a><strong>解决java.sql.SQLException: The server time zone value ‘XXXXXX’ is unrecognized or represents more than one time zone.</strong></h4><p>这是由于数据库和系统时区差异所造成的，在jdbc连接的url后面加上serverTimezone&#x3D;GMT即可解决问题</p>
-<p> “jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;mydatabase?serverTimezone&#x3D;GMT”; </p>
-<p>连接c3p0时，也会因为这个原因出现错误</p>
-<h5 id="c3p0问题"><a href="#c3p0问题" class="headerlink" title="c3p0问题"></a>c3p0问题</h5><p>在c3p0-config.xml文件中报错</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name=<span class="string">&quot;jdbcUrl&quot;</span>&gt;jdbc:mysql:<span class="comment">//localhost:3306/student&lt;/property&gt; // 会报错--&gt; Exception in thread &quot;main&quot; java.sql.SQLException: An attempt by a client to checkout a Connection has timed out.</span></span><br><span class="line"></span><br><span class="line">&lt;property name=<span class="string">&quot;jdbcUrl&quot;</span>&gt;jdbc:mysql:<span class="comment">//localhost:3306/student?serverTimezone=GMT&lt;/property&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="druid问题"><a href="#druid问题" class="headerlink" title="druid问题"></a>druid问题</h5><p>报错</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">严重: init datasource error</span><br><span class="line">java.sql.SQLException: validateConnection <span class="literal">false</span></span><br><span class="line">	at com.alibaba.druid.pool.DruidAbstractDataSource.validateConnection(DruidAbstractDataSource.java:<span class="number">1216</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:<span class="number">1439</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:<span class="number">618</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">915</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">911</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">98</span>)</span><br><span class="line">	at cn.itcast.dataSource.druid.Druid.main(Druid.java:<span class="number">17</span>)</span><br><span class="line"></span><br><span class="line">五月 <span class="number">10</span>, <span class="number">2020</span> <span class="number">5</span>:<span class="number">51</span>:<span class="number">58</span> 下午 com.alibaba.druid.pool.DruidDataSource error</span><br><span class="line">严重: dataSource init error</span><br><span class="line">java.sql.SQLException: validateConnection <span class="literal">false</span></span><br><span class="line">	at com.alibaba.druid.pool.DruidAbstractDataSource.validateConnection(DruidAbstractDataSource.java:<span class="number">1216</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:<span class="number">1439</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:<span class="number">618</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">915</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">911</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">98</span>)</span><br><span class="line">	at cn.itcast.dataSource.druid.Druid.main(Druid.java:<span class="number">17</span>)</span><br><span class="line"></span><br><span class="line">五月 <span class="number">10</span>, <span class="number">2020</span> <span class="number">5</span>:<span class="number">51</span>:<span class="number">58</span> 下午 com.alibaba.druid.pool.DruidDataSource info</span><br><span class="line">信息: &#123;dataSource-<span class="number">1</span>&#125; inited</span><br><span class="line">Exception in thread <span class="string">&quot;main&quot;</span> java.sql.SQLException: validateConnection <span class="literal">false</span></span><br><span class="line">	at com.alibaba.druid.pool.DruidAbstractDataSource.validateConnection(DruidAbstractDataSource.java:<span class="number">1216</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:<span class="number">1439</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:<span class="number">618</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">915</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">911</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">98</span>)</span><br><span class="line">	at cn.itcast.dataSource.druid.Druid.main(Druid.java:<span class="number">17</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>具体不知道什么情况</p>
-<p>把driverClassName&#x3D;com.mysql.jdbc.Driver改为</p>
-<p>driverClassName&#x3D;com.mysql.cj.jdbc.Driver就可以了</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/10/jdbc%E9%97%AE%E9%A2%98/" data-id="cl0kse0uo0002xsut93kh5px2" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/03/10/length/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
     </a>
-  
-  
-    <a href="/2022/03/10/JDBC/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
-    </a>
-  
-</nav>
 
-  
-</article>
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
 
-
-</section>
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
         
-          <li>
-            <a href="/2022/03/10/%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80/">(no title)</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
-          <li>
-            <a href="/2022/03/10/%E6%91%84%E5%83%8F%E5%A4%B4%E9%97%AE%E9%A2%98/">(no title)</a>
-          </li>
         
-          <li>
-            <a href="/2022/03/10/Unity%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/10/length/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/10/jdbc%E9%97%AE%E9%A2%98/">(no title)</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
       </ul>
     </div>
   </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
 </nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-03-10 16:46" pubdate>
+        2022年3月10日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.9k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      24 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            <div class="markdown-body">
+              <h4 id="解决java-sql-SQLException-The-server-time-zone-value-‘XXXXXX’-is-unrecognized-or-represents-more-than-one-time-zone"><a href="#解决java-sql-SQLException-The-server-time-zone-value-‘XXXXXX’-is-unrecognized-or-represents-more-than-one-time-zone" class="headerlink" title="解决java.sql.SQLException: The server time zone value ‘XXXXXX’ is unrecognized or represents more than one time zone."></a><strong>解决java.sql.SQLException: The server time zone value ‘XXXXXX’ is unrecognized or represents more than one time zone.</strong></h4><p>这是由于数据库和系统时区差异所造成的，在jdbc连接的url后面加上serverTimezone&#x3D;GMT即可解决问题</p>
+<p> “jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;mydatabase?serverTimezone&#x3D;GMT”; </p>
+<p>连接c3p0时，也会因为这个原因出现错误</p>
+<h5 id="c3p0问题"><a href="#c3p0问题" class="headerlink" title="c3p0问题"></a>c3p0问题</h5><p>在c3p0-config.xml文件中报错</p>
+<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs java">&lt;property name=<span class="hljs-string">&quot;jdbcUrl&quot;</span>&gt;jdbc:mysql:<span class="hljs-comment">//localhost:3306/student&lt;/property&gt; // 会报错--&gt; Exception in thread &quot;main&quot; java.sql.SQLException: An attempt by a client to checkout a Connection has timed out.</span><br><br>&lt;property name=<span class="hljs-string">&quot;jdbcUrl&quot;</span>&gt;jdbc:mysql:<span class="hljs-comment">//localhost:3306/student?serverTimezone=GMT&lt;/property&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="druid问题"><a href="#druid问题" class="headerlink" title="druid问题"></a>druid问题</h5><p>报错</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java">严重: init datasource error<br>java.sql.SQLException: validateConnection <span class="hljs-literal">false</span><br>	at com.alibaba.druid.pool.DruidAbstractDataSource.validateConnection(DruidAbstractDataSource.java:<span class="hljs-number">1216</span>)<br>	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:<span class="hljs-number">1439</span>)<br>	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:<span class="hljs-number">618</span>)<br>	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="hljs-number">915</span>)<br>	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="hljs-number">911</span>)<br>	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="hljs-number">98</span>)<br>	at cn.itcast.dataSource.druid.Druid.main(Druid.java:<span class="hljs-number">17</span>)<br><br>五月 <span class="hljs-number">10</span>, <span class="hljs-number">2020</span> <span class="hljs-number">5</span>:<span class="hljs-number">51</span>:<span class="hljs-number">58</span> 下午 com.alibaba.druid.pool.DruidDataSource error<br>严重: dataSource init error<br>java.sql.SQLException: validateConnection <span class="hljs-literal">false</span><br>	at com.alibaba.druid.pool.DruidAbstractDataSource.validateConnection(DruidAbstractDataSource.java:<span class="hljs-number">1216</span>)<br>	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:<span class="hljs-number">1439</span>)<br>	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:<span class="hljs-number">618</span>)<br>	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="hljs-number">915</span>)<br>	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="hljs-number">911</span>)<br>	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="hljs-number">98</span>)<br>	at cn.itcast.dataSource.druid.Druid.main(Druid.java:<span class="hljs-number">17</span>)<br><br>五月 <span class="hljs-number">10</span>, <span class="hljs-number">2020</span> <span class="hljs-number">5</span>:<span class="hljs-number">51</span>:<span class="hljs-number">58</span> 下午 com.alibaba.druid.pool.DruidDataSource info<br>信息: &#123;dataSource-<span class="hljs-number">1</span>&#125; inited<br>Exception in thread <span class="hljs-string">&quot;main&quot;</span> java.sql.SQLException: validateConnection <span class="hljs-literal">false</span><br>	at com.alibaba.druid.pool.DruidAbstractDataSource.validateConnection(DruidAbstractDataSource.java:<span class="hljs-number">1216</span>)<br>	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:<span class="hljs-number">1439</span>)<br>	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:<span class="hljs-number">618</span>)<br>	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="hljs-number">915</span>)<br>	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="hljs-number">911</span>)<br>	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="hljs-number">98</span>)<br>	at cn.itcast.dataSource.druid.Druid.main(Druid.java:<span class="hljs-number">17</span>)<br><br></code></pre></td></tr></table></figure>
+
+<p>具体不知道什么情况</p>
+<p>把driverClassName&#x3D;com.mysql.jdbc.Driver改为</p>
+<p>driverClassName&#x3D;com.mysql.cj.jdbc.Driver就可以了</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/03/10/length/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/03/10/JDBC/">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
 
 
 
 
-<script src="/js/script.js"></script>
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
 
 
 
 
 
-  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
 </body>
 </html>

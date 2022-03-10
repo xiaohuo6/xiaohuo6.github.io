@@ -16,15 +16,15 @@
   <meta name="author" content="xiaohuo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="JDBC使用步骤一、注册驱动 类的加载时机：1》new 对象2》加载子类3》调用类中的静态成员4》通过反射 使用new对象的方式加载类的不足：1、属于编译期加载，如果编译期间该类不存在，则直接报编译错误，也就是依赖性太强2、导致Driver对象创建了两遍，效率较低 1DriverManager.deregisterDriver(new Driver());  采用反射的方式加载类（推荐） 1、属于">
+    <meta name="description" content="I&#x2F;O管理5.1 I&#x2F;O管理概述 可寻址是块设备的基本特征；共享设备必须是可寻址的和可随机访问的设备；共享设备是指一段时间（而不是同一时间）内允许多个进程同时访问的设备；分配共享设备是不会引起进程死锁的。  为了便于上层软件的编制，设备控制器通常需要提供控制寄存器、状态寄存器和控制命令 中断寄存器位于计算机主机；不存在I&#x2F;O地址寄存器；编程空间一般是由体系结构和操作系">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2022/03/10/JDBC/index.html">
+<meta property="og:url" content="http://example.com/2022/03/10/%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JDBC使用步骤一、注册驱动 类的加载时机：1》new 对象2》加载子类3》调用类中的静态成员4》通过反射 使用new对象的方式加载类的不足：1、属于编译期加载，如果编译期间该类不存在，则直接报编译错误，也就是依赖性太强2、导致Driver对象创建了两遍，效率较低 1DriverManager.deregisterDriver(new Driver());  采用反射的方式加载类（推荐） 1、属于">
+<meta property="og:description" content="I&#x2F;O管理5.1 I&#x2F;O管理概述 可寻址是块设备的基本特征；共享设备必须是可寻址的和可随机访问的设备；共享设备是指一段时间（而不是同一时间）内允许多个进程同时访问的设备；分配共享设备是不会引起进程死锁的。  为了便于上层软件的编制，设备控制器通常需要提供控制寄存器、状态寄存器和控制命令 中断寄存器位于计算机主机；不存在I&#x2F;O地址寄存器；编程空间一般是由体系结构和操作系">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-10T08:46:56.451Z">
-<meta property="article:modified_time" content="2020-03-12T03:51:10.324Z">
+<meta property="article:published_time" content="2022-03-10T08:46:56.512Z">
+<meta property="article:modified_time" content="2020-06-02T09:52:28.708Z">
 <meta property="article:author" content="xiaohuo">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -196,7 +196,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.8k 字
+      1.3k 字
     </span>
   
 
@@ -205,7 +205,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      15 分钟
+      11 分钟
     </span>
   
 
@@ -237,33 +237,34 @@
             <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <h4 id="JDBC使用步骤"><a href="#JDBC使用步骤" class="headerlink" title="JDBC使用步骤"></a>JDBC使用步骤</h4><p>一、注册驱动</p>
-<p>类的加载时机：<br>1》new 对象<br>2》加载子类<br>3》调用类中的静态成员<br>4》通过反射</p>
-<p>使用new对象的方式加载类的不足：<br>1、属于编译期加载，如果编译期间该类不存在，则直接报编译错误，也就是依赖性太强<br>2、导致Driver对象创建了两遍，效率较低</p>
-<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs java">DriverManager.deregisterDriver(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Driver</span>());<br></code></pre></td></tr></table></figure>
-
-<p>采用反射的方式加载类<strong>（推荐）</strong></p>
-<p>1、属于运行期加载，大大降低了类的依赖性<br>2、Driver对象仅仅创建了1遍，效率较高</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">Class.forName(<span class="hljs-string">&quot;com.mysql.jdbc.Driver&quot;</span>);<br></code></pre></td></tr></table></figure>
-
-
-
-<p>二、获取连接</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">方法一<span class="hljs-type">Connection</span> <span class="hljs-variable">connection</span> <span class="hljs-operator">=</span> <br>DriverManager.getConnection(<span class="hljs-string">&quot;jdbc:mysql://localhost:3306/girls?user=root&amp;password=mysql&quot;</span><br></code></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">方法二<span class="hljs-type">Connection</span> <span class="hljs-variable">connection</span> <span class="hljs-operator">=</span> DriverManager.getConnection(<span class="hljs-string">&quot;jdbc:mysql://localhost:3306/girls?serverTimezone=GMT&quot;</span>,<span class="hljs-string">&quot;root&quot;</span>,<span class="hljs-string">&quot;mysql&quot;</span>);<br></code></pre></td></tr></table></figure>
-
-<p>方法三创建property文件，把user，password，url，driver放入**(推荐)**</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestJDBC2</span> &#123;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br><span class="hljs-type">Properties</span> <span class="hljs-variable">info</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Properties</span>();<br>info.load(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(<span class="hljs-string">&quot;src\\jdbc.properties&quot;</span>));<br>String user=info.getProperty(<span class="hljs-string">&quot;user&quot;</span>);<br><span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> info . getProperty ( <span class="hljs-string">&quot; password &quot;</span> ) ;<br><span class="hljs-type">String</span> <span class="hljs-variable">driver</span> <span class="hljs-operator">=</span> info.getProperty(<span class="hljs-string">&quot;driver&quot;</span>);<br><span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> info.getProperty(<span class="hljs-string">&quot;url&quot;</span>);<br><span class="hljs-comment">//1.注册驱动</span><br>Class.forName(driver);<br><span class="hljs-comment">//2.获取连接</span><br>Connection connection=DriverManager.getconnection(url,user,password);<br>System.out.printIn(“连接成功“）;<br></code></pre></td></tr></table></figure>
-
-
-
-<p>三、执行增删改查</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">sql</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;select id, name, sex, borndate from beauty&quot;</span>;<br><span class="hljs-comment">//获取执行sq1的命令对象</span><br><span class="hljs-type">Statement</span> <span class="hljs-variable">statement</span> <span class="hljs-operator">=</span> connection. createStatement();<br><span class="hljs-comment">//执行sq1语句</span><br><span class="hljs-type">boolean</span> <span class="hljs-variable">execpte</span> <span class="hljs-operator">=</span> statement.execute(sql);<span class="hljs-comment">//执行任何sq1语句</span><br><span class="hljs-type">int</span> <span class="hljs-variable">update</span> <span class="hljs-operator">=</span> statement.executeUpdate(sq1);<span class="hljs-comment">//执行增删改语句，返回受影响的行数</span><br>ResultSet set=statement.executeQuery(sq1);<span class="hljs-comment">//执行查询语句，返回一个结果集</span><br><span class="hljs-keyword">while</span>(set.next())&#123;<br><span class="hljs-type">int</span> id=set.getInt(<span class="hljs-number">1</span>);<span class="hljs-comment">//方式一：getXXX(列的索引)</span><br><span class="hljs-comment">//方式二：getXX(&quot;列名&quot;)    推荐getObject(列名|索引名)</span><br><span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> set. getString(<span class="hljs-number">2</span>);<br>String sex=set.getstring(<span class="hljs-number">3</span>);<br>Date date=set.getDate(<span class="hljs-number">4</span>);<br>System.out.println(id+<span class="hljs-string">&quot;\t&quot;</span>+name+<span class="hljs-string">&quot;\t&quot;</span>+sex+<span class="hljs-string">&quot;\t&quot;</span>+date);<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>四、关闭连接</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">set.close();<br>statement.close();<br>connection.close();<br></code></pre></td></tr></table></figure>
-
+              <h4 id="I-x2F-O管理"><a href="#I-x2F-O管理" class="headerlink" title="I&#x2F;O管理"></a>I&#x2F;O管理</h4><h5 id="5-1-I-x2F-O管理概述"><a href="#5-1-I-x2F-O管理概述" class="headerlink" title="5.1 I&#x2F;O管理概述"></a>5.1 I&#x2F;O管理概述</h5><ul>
+<li><p>可寻址是块设备的基本特征；共享设备必须是可寻址的和可随机访问的设备；共享设备是指一段时间（而不是同一时间）内允许多个进程同时访问的设备；分配共享设备是不会引起进程死锁的。</p>
+</li>
+<li><p>为了便于上层软件的编制，设备控制器通常需要提供控制寄存器、状态寄存器和控制命令</p>
+<p><em>中断寄存器位于计算机主机；不存在I&#x2F;O地址寄存器；编程空间一般是由体系结构和操作系统共同决定的。控制寄存器和状态寄存器分别用于接收上层发来的命令并存放设备状态信号，是设备控制器与上层的接口；至于控制命令，每种设备对应的设备控制器都对应一组相应的控制命令，CPU通过控制命令控制设备控制器。</em></p>
+</li>
+<li><p>通道是一种特殊的处理器，所以属于硬件技术。SPOOLing、缓冲池、内存覆盖都是在内存的基础上通过软件实现的。</p>
+</li>
+<li><p>在DMA方式中，设备和内存之间可以成批地进行数据交换而不用CPU干预，CPU只参与预处理和结束过程。</p>
+</li>
+<li><p>计算机系统为每台设备确定一个编号以便区分和识别设备，这个确定的编号称为设备的绝对号。</p>
+</li>
+<li><p>所有设备的启动工作都由系统统一来做；来自通道的I&#x2F;O中断事件由设备管理负责处理；编制好的通道程序是存放在主存中的。</p>
+</li>
+<li><p>I&#x2F;O中断是CPU与通道协调工作的一种手段，所以在通道完成了通道程序的执行时，便要产生中断。</p>
+</li>
+<li><p>输入&#x2F;输出软件一般从上到下分为4个层次：用户层、与设备无关的软件层、设备驱动程序及中断处理程序。与设备无关的软件层也就是系统调用的处理程序。</p>
+</li>
+<li><p>用户程序发出磁盘I&#x2F;O请求后，系统的处理流程是：用户程序→系统调用处理程序→设备驱动程序→中断处理程序。</p>
+</li>
+<li><p>DMA控制方式与中断控制方式的主要区别如下：<br>1)中断控制方式在每个数据传送完成后中断CPU,而DMA控制方式则在所要求传送的一批数据全部传送结束时中断CPU。<br>2)中断控制方式的数据传送在中断处理时由CPU控制完成，而DMA控制方式则在DMA控制器的控制下完成。不过，在DMA控制方式中，数据传送的方向、存放数据的内存始址及传送数据的长度等仍然由CPU控制。<br>3)DMA方式以存储器为核心，中断控制方式以CPU为核心。因此DMA方式能与CPU并行工作<br>4)DMA方式传输批量的数据，中断控制方式的传输则以字节为单位。</p>
+</li>
+</ul>
+<h5 id="5-2-I-x2F-O核心子系统"><a href="#5-2-I-x2F-O核心子系统" class="headerlink" title="5.2 I&#x2F;O核心子系统"></a>5.2 I&#x2F;O核心子系统</h5><ul>
+<li>设备的独立性是指用户编程时使用的设备与实际使用的设备无关</li>
+<li>重排I&#x2F;O请求次序也就是进行I&#x2F;O调度，使进程之间公平地共享磁盘访问，减少I&#x2F;O完成所需要的平均等待时间；缓冲区结合预读和滞后写技术对于具有重复性及阵发性的I&#x2F;O进程改善磁盘I&#x2F;O性能很有帮助；优化文件物理块的分布可以减少寻找时间与延迟时间，从而提高磁盘性能；在一个磁盘上设置多个分区与改善设备I&#x2F;O性能并无多大联系，相反还会带来处理的复杂性，降低利用率。</li>
+<li>输入井和输出井是在磁盘上开辟的两大存储空间。输入井模拟脱机输入时的磁盘设备，用于暂存I&#x2F;O设备输入的数据；输出井模拟脱机输出时的磁盘，用于暂存用户程序的输出数据。为了缓和CPU,打印结果首先送到位于磁盘固定区域的输出井。</li>
+</ul>
 
             </div>
             <hr>
@@ -284,17 +285,11 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/10/jdbc%E9%97%AE%E9%A2%98/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/10/hexo+github%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98/">
+                      <a href="/2022/03/10/%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80/">
                         <span class="hidden-mobile"></span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
