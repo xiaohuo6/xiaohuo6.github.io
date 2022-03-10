@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-页面布局" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/10/%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80/" class="article-date">
+  <time class="dt-published" datetime="2022-03-10T08:46:56.491Z" itemprop="datePublished">2022-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="假设高度已知，请写出三栏布局，其中左栏、右栏宽度各为300px"><a href="#假设高度已知，请写出三栏布局，其中左栏、右栏宽度各为300px" class="headerlink" title="假设高度已知，请写出三栏布局，其中左栏、右栏宽度各为300px,"></a>假设高度已知，请写出三栏布局，其中左栏、右栏宽度各为300px,</h4><p>中间自适应</p>
+<ol>
+<li><p>float    浮动</p>
+</li>
+<li><p>absolute    绝对定位</p>
+</li>
+<li><p>flexbox</p>
+</li>
+<li><p>table    表格</p>
+</li>
+<li><p>grid    网格</p>
+</li>
+</ol>
+<p>各种方案的优缺点</p>
+<p>如果高度不确定，哪种方案不能再用 只有3.4能用</p>
+<h4 id="CSS盒模型的认识"><a href="#CSS盒模型的认识" class="headerlink" title="CSS盒模型的认识"></a>CSS盒模型的认识</h4><ul>
+<li>基本概念：标准模型+IE模型</li>
+</ul>
+<p>​     内容(content)、内边距(<em>padding</em>)、边框(<em>border</em>)和外边距(<em>margin</em>) </p>
+<ul>
+<li><p>标准模型和IE模型的区别</p>
+<p>盒模型是CSS中重要的一个概念，但是在以前IE5.5以及更早的IE浏览用的不是标准盒模型，我们称之为IE盒模型。<br><strong>两者的区别在于content的不同，IE盒模型的content包括border、padding</strong></p>
+</li>
+<li><p>CSS如何设置这两种模型</p>
+<p>box-sizing:content-box;默认    标准模型<br>box-sizing:border-box;             IE模型</p>
+</li>
+<li><p>JS如何设置获取盒模型对应的宽和高</p>
+<p>dom.style.width&#x2F;height   只能获取内链样式<br>dom.currentStyle.width&#x2F;height   只有IE支持<br>window.getComputedStyle(dom).width&#x2F;height</p>
+</li>
+<li><p>实例题（根据盒模型解释边距重叠）</p>
+</li>
+<li><p>BFC（边距重叠解决方案）</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/10/%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80/" data-id="cl0kse0ux0006xsut5if629i0" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-摄像头问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/10/%E6%91%84%E5%83%8F%E5%A4%B4%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2022-03-10T08:46:56.489Z" itemprop="datePublished">2022-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>关于笔试中调起摄像头打开后却提示没有打开，可以检查麦克风是否打开</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/10/%E6%91%84%E5%83%8F%E5%A4%B4%E9%97%AE%E9%A2%98/" data-id="cl0kse0uw0005xsut6dfl2ogm" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Unity游戏开发" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/10/Unity%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" class="article-date">
+  <time class="dt-published" datetime="2022-03-10T08:46:56.476Z" itemprop="datePublished">2022-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <img src="D:\blog\public\img\Unity.png" style="zoom: 67%;" />
+
+<p><strong>父子节点</strong>：</p>
+<p>子节点会随着父节点的移动而移动，旋转而旋转，缩放而缩放</p>
+<p>子节点会以父节点为原点 建立局部坐标系</p>
+<p><strong>预制体</strong>：</p>
+<p>放在Assets目录下作为资源存在，只有在 Hierachy 面板中使用的时候才是游戏对象</p>
+<p><strong>注意事项</strong>：</p>
+<p>1、文件名和类名保持一致</p>
+<p>2、所有要挂载的脚本必须继承或者间接继承MonoBehaviour</p>
+<p>类名不要和常用的API类名一致 </p>
+<p><strong>查找</strong>：</p>
+<p>Find  通过名字来查找游戏对象要保证Hierachy面板中该游戏对象的名字是唯一的   </p>
+<p>FindGameObjectWithTag  通过游戏对象的标签进行查找，返回一个游戏对象</p>
+<p>FindGameObjectsWithTag   通过游戏对象的标签进行查找，返回一个游戏对象数组</p>
+<p>FindWithTag   和FindGameObjectWithTag是等效的</p>
+<p><strong>克隆</strong>：</p>
+<p>instantiate（预制体）  返回一个游戏对象</p>
+<p>GameObject.Instantiate（预制体，坐标，旋转）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/10/Unity%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" data-id="cl0kse0ur0003xsutf9vsa8wv" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-length" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/10/length/" class="article-date">
+  <time class="dt-published" datetime="2022-03-10T08:46:56.474Z" itemprop="datePublished">2022-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>length——数组的属性；<br>length()——String的方法；<br>size()——集合的方法</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/10/length/" data-id="cl0kse0uv0004xsut3s4yb6r1" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-jdbc问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/10/jdbc%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2022-03-10T08:46:56.463Z" itemprop="datePublished">2022-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="解决java-sql-SQLException-The-server-time-zone-value-‘XXXXXX’-is-unrecognized-or-represents-more-than-one-time-zone"><a href="#解决java-sql-SQLException-The-server-time-zone-value-‘XXXXXX’-is-unrecognized-or-represents-more-than-one-time-zone" class="headerlink" title="解决java.sql.SQLException: The server time zone value ‘XXXXXX’ is unrecognized or represents more than one time zone."></a><strong>解决java.sql.SQLException: The server time zone value ‘XXXXXX’ is unrecognized or represents more than one time zone.</strong></h4><p>这是由于数据库和系统时区差异所造成的，在jdbc连接的url后面加上serverTimezone&#x3D;GMT即可解决问题</p>
+<p> “jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;mydatabase?serverTimezone&#x3D;GMT”; </p>
+<p>连接c3p0时，也会因为这个原因出现错误</p>
+<h5 id="c3p0问题"><a href="#c3p0问题" class="headerlink" title="c3p0问题"></a>c3p0问题</h5><p>在c3p0-config.xml文件中报错</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name=<span class="string">&quot;jdbcUrl&quot;</span>&gt;jdbc:mysql:<span class="comment">//localhost:3306/student&lt;/property&gt; // 会报错--&gt; Exception in thread &quot;main&quot; java.sql.SQLException: An attempt by a client to checkout a Connection has timed out.</span></span><br><span class="line"></span><br><span class="line">&lt;property name=<span class="string">&quot;jdbcUrl&quot;</span>&gt;jdbc:mysql:<span class="comment">//localhost:3306/student?serverTimezone=GMT&lt;/property&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="druid问题"><a href="#druid问题" class="headerlink" title="druid问题"></a>druid问题</h5><p>报错</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">严重: init datasource error</span><br><span class="line">java.sql.SQLException: validateConnection <span class="literal">false</span></span><br><span class="line">	at com.alibaba.druid.pool.DruidAbstractDataSource.validateConnection(DruidAbstractDataSource.java:<span class="number">1216</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:<span class="number">1439</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:<span class="number">618</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">915</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">911</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">98</span>)</span><br><span class="line">	at cn.itcast.dataSource.druid.Druid.main(Druid.java:<span class="number">17</span>)</span><br><span class="line"></span><br><span class="line">五月 <span class="number">10</span>, <span class="number">2020</span> <span class="number">5</span>:<span class="number">51</span>:<span class="number">58</span> 下午 com.alibaba.druid.pool.DruidDataSource error</span><br><span class="line">严重: dataSource init error</span><br><span class="line">java.sql.SQLException: validateConnection <span class="literal">false</span></span><br><span class="line">	at com.alibaba.druid.pool.DruidAbstractDataSource.validateConnection(DruidAbstractDataSource.java:<span class="number">1216</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:<span class="number">1439</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:<span class="number">618</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">915</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">911</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">98</span>)</span><br><span class="line">	at cn.itcast.dataSource.druid.Druid.main(Druid.java:<span class="number">17</span>)</span><br><span class="line"></span><br><span class="line">五月 <span class="number">10</span>, <span class="number">2020</span> <span class="number">5</span>:<span class="number">51</span>:<span class="number">58</span> 下午 com.alibaba.druid.pool.DruidDataSource info</span><br><span class="line">信息: &#123;dataSource-<span class="number">1</span>&#125; inited</span><br><span class="line">Exception in thread <span class="string">&quot;main&quot;</span> java.sql.SQLException: validateConnection <span class="literal">false</span></span><br><span class="line">	at com.alibaba.druid.pool.DruidAbstractDataSource.validateConnection(DruidAbstractDataSource.java:<span class="number">1216</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:<span class="number">1439</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:<span class="number">618</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">915</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">911</span>)</span><br><span class="line">	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:<span class="number">98</span>)</span><br><span class="line">	at cn.itcast.dataSource.druid.Druid.main(Druid.java:<span class="number">17</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>具体不知道什么情况</p>
+<p>把driverClassName&#x3D;com.mysql.jdbc.Driver改为</p>
+<p>driverClassName&#x3D;com.mysql.cj.jdbc.Driver就可以了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/10/jdbc%E9%97%AE%E9%A2%98/" data-id="cl0kse0uo0002xsut93kh5px2" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-JDBC" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/10/JDBC/" class="article-date">
+  <time class="dt-published" datetime="2022-03-10T08:46:56.451Z" itemprop="datePublished">2022-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="JDBC使用步骤"><a href="#JDBC使用步骤" class="headerlink" title="JDBC使用步骤"></a>JDBC使用步骤</h4><p>一、注册驱动</p>
+<p>类的加载时机：<br>1》new 对象<br>2》加载子类<br>3》调用类中的静态成员<br>4》通过反射</p>
+<p>使用new对象的方式加载类的不足：<br>1、属于编译期加载，如果编译期间该类不存在，则直接报编译错误，也就是依赖性太强<br>2、导致Driver对象创建了两遍，效率较低</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DriverManager.deregisterDriver(<span class="keyword">new</span> <span class="title class_">Driver</span>());</span><br></pre></td></tr></table></figure>
+
+<p>采用反射的方式加载类<strong>（推荐）</strong></p>
+<p>1、属于运行期加载，大大降低了类的依赖性<br>2、Driver对象仅仅创建了1遍，效率较高</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>二、获取连接</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">方法一<span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> </span><br><span class="line">DriverManager.getConnection(<span class="string">&quot;jdbc:mysql://localhost:3306/girls?user=root&amp;password=mysql&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">方法二<span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> DriverManager.getConnection(<span class="string">&quot;jdbc:mysql://localhost:3306/girls?serverTimezone=GMT&quot;</span>,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;mysql&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>方法三创建property文件，把user，password，url，driver放入**(推荐)**</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestJDBC2</span> &#123;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"><span class="type">Properties</span> <span class="variable">info</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">info.load(<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;src\\jdbc.properties&quot;</span>));</span><br><span class="line">String user=info.getProperty(<span class="string">&quot;user&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> info . getProperty ( <span class="string">&quot; password &quot;</span> ) ;</span><br><span class="line"><span class="type">String</span> <span class="variable">driver</span> <span class="operator">=</span> info.getProperty(<span class="string">&quot;driver&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> info.getProperty(<span class="string">&quot;url&quot;</span>);</span><br><span class="line"><span class="comment">//1.注册驱动</span></span><br><span class="line">Class.forName(driver);</span><br><span class="line"><span class="comment">//2.获取连接</span></span><br><span class="line">Connection connection=DriverManager.getconnection(url,user,password);</span><br><span class="line">System.out.printIn(“连接成功“）;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>三、执行增删改查</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;select id, name, sex, borndate from beauty&quot;</span>;</span><br><span class="line"><span class="comment">//获取执行sq1的命令对象</span></span><br><span class="line"><span class="type">Statement</span> <span class="variable">statement</span> <span class="operator">=</span> connection. createStatement();</span><br><span class="line"><span class="comment">//执行sq1语句</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">execpte</span> <span class="operator">=</span> statement.execute(sql);<span class="comment">//执行任何sq1语句</span></span><br><span class="line"><span class="type">int</span> <span class="variable">update</span> <span class="operator">=</span> statement.executeUpdate(sq1);<span class="comment">//执行增删改语句，返回受影响的行数</span></span><br><span class="line">ResultSet set=statement.executeQuery(sq1);<span class="comment">//执行查询语句，返回一个结果集</span></span><br><span class="line"><span class="keyword">while</span>(set.next())&#123;</span><br><span class="line"><span class="type">int</span> id=set.getInt(<span class="number">1</span>);<span class="comment">//方式一：getXXX(列的索引)</span></span><br><span class="line"><span class="comment">//方式二：getXX(&quot;列名&quot;)    推荐getObject(列名|索引名)</span></span><br><span class="line"><span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> set. getString(<span class="number">2</span>);</span><br><span class="line">String sex=set.getstring(<span class="number">3</span>);</span><br><span class="line">Date date=set.getDate(<span class="number">4</span>);</span><br><span class="line">System.out.println(id+<span class="string">&quot;\t&quot;</span>+name+<span class="string">&quot;\t&quot;</span>+sex+<span class="string">&quot;\t&quot;</span>+date);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>四、关闭连接</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set.close();</span><br><span class="line">statement.close();</span><br><span class="line">connection.close();</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/10/JDBC/" data-id="cl0kse0uk0001xsut8t7hfdke" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hexo+github博客问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/10/hexo+github%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2022-03-10T08:46:56.410Z" itemprop="datePublished">2022-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="关于hexo和github搭建过程中的问题"><a href="#关于hexo和github搭建过程中的问题" class="headerlink" title="关于hexo和github搭建过程中的问题"></a><strong>关于hexo和github搭建过程中的问题</strong></h2><p>​        </p>
+<p>​       第一次搭建遇到了一个问题，在配置_config.yml的时候，自己使用的windows系统，教程使用的是Mac，教程中的type、repo后都是无引号的，但是自己这样配置完一直无法通过。后来看到一个教程中说要加上引号，之后才配置成功。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/10/hexo+github%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98/" data-id="cl0kse0ud0000xsut9prwg48c" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/03/10/%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/10/%E6%91%84%E5%83%8F%E5%A4%B4%E9%97%AE%E9%A2%98/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/10/Unity%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/10/length/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/10/jdbc%E9%97%AE%E9%A2%98/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
